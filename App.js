@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Login, PaginaInicial, Obesidade, Cadastro } from './pages'
+import { StyleSheet } from 'react-native';
 
+const Stack = createStackNavigator();
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <NavigationContainer initialRouteName='Pagina Inicial' headerMode='screen'>
+            <Stack.Navigator>
+                <Stack.Screen name='PaginaInicial' component={PaginaInicial} options={{title: 'Pagina Inicial', headerStyle:{backgroundColor: '#ff9052'}, headerTintColor: 'white'}} />
+                <Stack.Screen name='Obesidade' component={Obesidade} options={{title: 'Obesidade', headerStyle:{backgroundColor: 'salmon'}, headerTintColor: 'white'}} />
+                <Stack.Screen name='Login' component={Login} options={{title: 'Login', headerStyle:{backgroundColor: '#ff9052'}, headerTintColor: 'white'}} />
+                <Stack.Screen name='Cadastro' component={Cadastro} options={{title: 'Cadastro', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
