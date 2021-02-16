@@ -9,8 +9,8 @@ export default function App() {
     return (
         <NavigationContainer initialRouteName='Pagina Inicial' headerMode='screen'>
             <Stack.Navigator>
-            <Stack.Screen name='Receitas' component={Receitas} options={{title: 'Receitas', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='PaginaInicial' component={PaginaInicial} options={{title: 'Pagina Inicial', headerStyle:{backgroundColor: '#ff9052'}, headerTintColor: 'white'}} />
+                <Stack.Screen name='Receitas' component={Receitas} options={{title: 'Receitas', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='Obesidade' component={Obesidade} options={{title: 'Obesidade', headerStyle:{backgroundColor: 'salmon'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='Login' component={Login} options={{title: 'Login', headerStyle:{backgroundColor: '#ff9052'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='Cadastro' component={Cadastro} options={{title: 'Cadastro', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
