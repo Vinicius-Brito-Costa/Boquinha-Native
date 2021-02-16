@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import Index1 from './../../assets/image/index/index1.jpg'
 import Index2 from './../../assets/image/index/index2.jpg'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ImageBackground, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ImageBackground, Dimensions, ScrollView } from 'react-native';
 const Input = ({texto, senha, tipoTeclado='default'}) =>{
     return <TextInput style={styles.input} placeholder={texto} secureTextEntry={senha} keyboardType={tipoTeclado} />
 }
@@ -10,7 +10,8 @@ const { height, width } = Dimensions.get('window')
 export default function Home(props) {
     const {navigation} = props;
     return (
-        <View style={styles.container}>
+        <ScrollView>
+           <View style={styles.container}>
             <StatusBar hidden />
             <ImageBackground source={Index1} style={styles.bloco1}>
                 <View style={styles.containerMain} >
@@ -52,7 +53,12 @@ export default function Home(props) {
             <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Sobre')}>
                 <Text style={styles.loginTexto}>Sobre</Text>
             </TouchableOpacity>
-        </View>
+            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Perfil')}>
+                <Text style={styles.loginTexto}>Perfil</Text>
+            </TouchableOpacity>
+        </View> 
+        </ScrollView>
+        
     );
 }
 
@@ -121,20 +127,23 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'black',
         padding: 5,
+        marginBottom:  40
     },
     containerTextTitulo:{
         textAlign: 'center',
         fontSize: 30,
         color: 'black',
         padding: 5,
-        marginBottom: 40
+        marginBottom: 30,
+        marginTop: 20
     },
     bloco1:{
         height: height,
         alignItems: 'stretch',
         alignContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center', 
+        width: '100%'
     },
     titulo:{
         paddingTop: 30,
