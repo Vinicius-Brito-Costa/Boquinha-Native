@@ -47,10 +47,10 @@ export default function Home(props) {
                 <Text style={styles.loginTexto}>Cadastre-se</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Receitas')}>
-                <Text style={styles.loginTexto}>Receitas</Text>
+                <Text style={styles.loginTexto}>Cadastre-se</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Sobre')}>
-                <Text style={styles.loginTexto}>Sobre</Text>
+            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Cadastro')}>
+                <Text style={styles.loginTexto}>Cadastre-se</Text>
             </TouchableOpacity>
         </View>
     );
