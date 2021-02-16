@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, ImageBackground, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, Image, ImageBackground, Dimensions, ScrollView } from 'react-native';
 import Criancas from './../../assets/image/obesidade/obinf.png';
 import Prescricao from './../../assets/image/obesidade/prescricao.png';
 import Tristeza from './../../assets/image/obesidade/tristeza.png';
@@ -10,7 +10,8 @@ const {height, width} = Dimensions.get('window');
 export default function Obesidade () {
 
     return(
-        <View style={styles.container}>
+        <ScrollView>
+           <View style={styles.container}>
             <ImageBackground source={Criancas} style={styles.imagemCriancas}>
                 <View style={styles.imagemCriancasOverlay}>
                     <View style={{width: '80%'}}>
@@ -44,7 +45,9 @@ export default function Obesidade () {
                 <Text style={styles.containerText}>Consulte, também, um nutricionista. Ele é o profissional adequado para orientá-los em relação à nova dieta, para que sejam consumidos os alimentos e nutrientes em sua proporção ideal.</Text>
                 <Text style={styles.containerText}>Além de uma alimentação saudável, ter uma boa amamentação na fase inicial, praticar atividades físicas, ter controle do tempo de exposição às telas e uma boa noite de sono contribuem para a prevenção da obesidade infantil.</Text>
             </View>
-        </View>
+        </View> 
+        </ScrollView>
+        
     );
 }
 

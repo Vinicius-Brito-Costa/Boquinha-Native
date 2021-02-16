@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login, PaginaInicial, Obesidade, Cadastro, Receitas, Sobre } from './pages'
+import { Login, PaginaInicial, Obesidade, Cadastro, Receitas, Sobre, Perfil } from './pages'
 import { StyleSheet } from 'react-native';
 
 const Stack = createStackNavigator();
@@ -15,6 +15,7 @@ export default function App() {
                 <Stack.Screen name='Login' component={Login} options={{title: 'Login', headerStyle:{backgroundColor: '#ff9052'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='Cadastro' component={Cadastro} options={{title: 'Cadastro', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
                 <Stack.Screen name='Sobre' component={Sobre} options={{title: 'Sobre', headerStyle:{backgroundColor: '#77d353'}, headerTintColor: 'white'}} />
+                <Stack.Screen name='Perfil' component={Perfil} options={{title: 'Perfil', headerStyle:{backgroundColor: '#00a6ff'}, headerTintColor: 'white'}} />
             </Stack.Navigator>
         </NavigationContainer>
     );
