@@ -48,10 +48,7 @@ export default function Home(props) {
                 <Text style={styles.loginTexto}>Cadastre-se</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Receitas')}>
-                <Text style={styles.loginTexto}>Cadastre-se</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Cadastro')}>
-                <Text style={styles.loginTexto}>Cadastre-se</Text>
+                <Text style={styles.loginTexto}>Receitas</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Perfil')}>
                 <Text style={styles.loginTexto}>Perfil</Text>
