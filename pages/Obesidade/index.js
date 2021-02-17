@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, ImageBackground, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, Image, ImageBackground, Dimensions, ScrollView } from 'react-native';
 import Criancas from './../../assets/image/obesidade/obinf.png';
 import Prescricao from './../../assets/image/obesidade/prescricao.png';
 import Tristeza from './../../assets/image/obesidade/tristeza.png';
@@ -10,7 +10,8 @@ const {height, width} = Dimensions.get('window');
 export default function Obesidade () {
 
     return(
-        <View style={styles.container}>
+        <ScrollView>
+           <View style={styles.container}>
             <ImageBackground source={Criancas} style={styles.imagemCriancas}>
                 <View style={styles.imagemCriancasOverlay}>
                     <View style={{width: '80%'}}>
@@ -19,32 +20,34 @@ export default function Obesidade () {
                     </View>
                 </View>
             </ImageBackground>
-            <View style={styles.containerVerde}>
+            <View style={[styles.containerVerde, styles.containersColoridos]}>
                 <Image source={Prescricao} style={styles.containerImagens}/>
                 <Text style={styles.containerTextTitulo}>As consequências</Text>
                 <Text style={styles.containerText}>Entre os riscos da obesidade infantil, de curto e longo prazo, podemos citar:</Text>
                 <Text style={[styles.containerText, styles.containerTextList]}>° Doenças e complicações cardiovasculares, endócrinas, ortopédicas musculoesqueléticas, dermatológicas e neurológicas.</Text>
                 <Text style={[styles.containerText, styles.containerTextList]}>° Obesidade na vida adulta, desenvolvimento precoce de hipertensão, diabetes tipo 2, doença hepática gordurosa não alcoólica, asma entre outros.</Text>
             </View>
-            <View style={styles.containerAzul}>
+            <View style={[styles.containerAzul, styles.containersColoridos]}>
                 <Image source={Tristeza} style={styles.containerImagens}/>
                 <Text style={styles.containerText}>Além disso, existem os riscos de cunho social e emocional, já que a obesidade pode desencadear quadros de doenças mentais ou problemas de relacionamento, incluindo:</Text>
                 <Text style={[styles.containerText, styles.containerTextList]}>° Bullying, baixa autoestima, interferência na frequência escolar, empregabilidade e salários na vida adulta.</Text>
                 <Text style={[styles.containerText, styles.containerTextList]}>° Excesso de custos em saúde por toda vida.</Text>
                 <Text style={[styles.containerText, styles.containerTextList]}>° Falta de qualidade de vida.</Text>
             </View>
-            <View style={styles.containerLaranja}>
+            <View style={[styles.containerLaranja, styles.containersColoridos]}>
                 <Image source={Comida} style={styles.containerImagens}/>
                 <Text style={styles.containerTextTitulo}>Como previnir</Text>
                 <Text style={styles.containerText}>Uma reeducação alimentar para toda a família pode ser o primeiro — e mais importante — passo para o combate à obesidade infantil. Estar comprometido com a saúde e deixar de lado os alimentos ricos em gorduras e açúcares é fundamental para que todos consigam manter a nova rotina de uma alimentação saudável a longo prazo.</Text>
                 <Text style={styles.containerText}>Escolha versões integrais dos cereais e farinhas, como massas, arroz e pães. Aumente o consumo de verduras e legumes, e corte do cardápio os alimentos ultraprocessados, redes de fast food e os refrigerantes.</Text>
             </View>
-            <View style={styles.containerVermelho}>
+            <View style={[styles.containerVermelho, styles.containersColoridos]}>
                 <Image source={Doutora} style={styles.containerImagens}/>
                 <Text style={styles.containerText}>Consulte, também, um nutricionista. Ele é o profissional adequado para orientá-los em relação à nova dieta, para que sejam consumidos os alimentos e nutrientes em sua proporção ideal.</Text>
                 <Text style={styles.containerText}>Além de uma alimentação saudável, ter uma boa amamentação na fase inicial, praticar atividades físicas, ter controle do tempo de exposição às telas e uma boa noite de sono contribuem para a prevenção da obesidade infantil.</Text>
             </View>
-        </View>
+        </View> 
+        </ScrollView>
+        
     );
 }
 
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
     },
     imagemCriancas:{
         height: height + 40,
+        width: '100%',
         alignItems: 'stretch'
     },
     imagemCriancasOverlay:{
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
     },
     containerTextMainTitulo:{
         textAlign: 'center',
-        fontSize: 26,
+        fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
         padding: 5,
@@ -100,6 +104,10 @@ const styles = StyleSheet.create({
         color: 'white',
         padding: 5,
         marginBottom: 40
+    },
+    containersColoridos:{
+        flex: 1,
+        width: '100%',
     },
     containerVerde:{
         alignItems: 'center',
