@@ -53,6 +53,9 @@ export default function Home(props) {
             <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Perfil')}>
                 <Text style={styles.loginTexto}>Perfil</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Sobre')}>
+                <Text style={styles.loginTexto}>Sobre</Text>
+            </TouchableOpacity>
         </View> 
         </ScrollView>
         
