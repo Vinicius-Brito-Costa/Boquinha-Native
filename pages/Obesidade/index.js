@@ -5,15 +5,16 @@ import Prescricao from './../../assets/image/obesidade/prescricao.png';
 import Tristeza from './../../assets/image/obesidade/tristeza.png';
 import Comida from './../../assets/image/obesidade/boaalimentacao.png';
 import Doutora from './../../assets/image/obesidade/doctor.png';
-
+import Menu from './../../components/menu.js';
 const {height, width} = Dimensions.get('window');
-export default function Obesidade () {
-
+export default function Obesidade (props) {
+const { navigation } = props
     return(
         <ScrollView>
            <View style={styles.container}>
             <ImageBackground source={Criancas} style={styles.imagemCriancas}>
                 <View style={styles.imagemCriancasOverlay}>
+                    <Menu navigation={navigation} black={true} />
                     <View style={{width: '80%'}}>
                         <Text style={styles.containerTextMainTitulo}>O que é a obesidade infantil?</Text>
                         <Text style={styles.containerTextMain}>A obesidade infantil é uma doença multifatorial caracterizada pelo excesso de gordura corporal, que interfere na expectativa e qualidade de vida do indivíduo. Pode ser causada por fatores nutricionais, genéticos, psicossociais, culturais, entre outros. Está associada a riscos de desenvolver doenças crônicas não transmissíveis, tais como diabetes, hipertensão arterial e doenças cardiovasculares.</Text>

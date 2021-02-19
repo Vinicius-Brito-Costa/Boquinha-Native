@@ -1,14 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, ImageBackground, Dimensions, RadioButton } from 'react-native';
 import imagemFundo from './../../assets/image/perfil/baloes-perfil.jpg';
-
+import Menu from './../../components/menu.js';
 const {height, width} = Dimensions.get('window');
 
 
-export default function Perfil() {
+export default function Perfil(props) {
+    const { navigation } = props
     return (
         
         <ImageBackground source={imagemFundo} style={styles.imagem} >
+            <Menu navigation={navigation} black={true} />
         <ScrollView>
             <View style={styles.containerPrincipal}>
                 
@@ -88,7 +90,7 @@ const styles = StyleSheet.create ({
         justifyContent: 'center',
         marginVertical: 5,
         marginBottom: 100,
-        marginTop: 50, 
+        marginTop: 90, 
        
     }, 
     input: {

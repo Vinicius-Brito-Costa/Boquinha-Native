@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, ImageBackground, Dimensions, Text, TouchableOpacity, ScrollView, FlatList} from 'react-native';
 import ReadMore from 'react-native-read-more-text';
 import BG from './../../assets/image/receitas/fundoSalada.jpg';
-
+import Menu from './../../components/menu.js';
 const {height, width} = Dimensions.get('window')
 
 const _renderTruncatedFooter = (handlePress) => {
@@ -84,10 +84,13 @@ export default class Receitas extends React.Component{
         }
     }
     render(){
-        return <ScrollView>
+        const { navigation } = this.props
+        return <View>
+            <ScrollView>
         <View style={styles.container}>
         <ImageBackground source={BG} style={styles.imagemCriancas}>
             <View style={styles.imagemCriancasOverlay}>
+                <Menu navigation={navigation} black={true} />
                 <View style={{width: '80%'}}>
                     <Text style={styles.containerTextMainTitulo}>Receitas Maravilhosas</Text>
                     <Text style={styles.containerTextMain}>Com ingredientes saudáveis, de baixo custo e nutritivos para os pequenos, aproveitando todo seu potêncial alimentício.</Text>
@@ -314,6 +317,7 @@ export default class Receitas extends React.Component{
         </View>
     </View>
         </ScrollView>
+        </View>
     }
 }
 

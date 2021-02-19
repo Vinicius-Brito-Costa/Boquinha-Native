@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
-
+import Menu from './../../components/menu.js';
 const Input = ({texto, senha, tipoTeclado='default'}) =>{
     return <TextInput style={styles.input} placeholder={texto} secureTextEntry={senha} keyboardType={tipoTeclado} />
 }
-export default function Cadastro() {
+export default function Cadastro(props) {
+const { navigation } = props
     return (
         <View style={styles.container}>
+            <Menu navigation={navigation} />
             <StatusBar hidden />
             <View style={styles.containerMain}>
+                
                 <Text style={styles.titulo}>Cadastre-se</Text>
                 <Text style={styles.texto}>Crie sua conta agora preenchendo os campos abaixo
                 Já possui uma conta? <Text style={styles.subTitulo}>Entre</Text></Text>

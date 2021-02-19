@@ -2,18 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import Index1 from './../../assets/image/index/index1.jpg'
 import Index2 from './../../assets/image/index/index2.jpg'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ImageBackground, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ImageBackground, Dimensions, ScrollView, Button } from 'react-native';
+import Menu from './../../components/menu.js';
+
 const Input = ({texto, senha, tipoTeclado='default'}) =>{
     return <TextInput style={styles.input} placeholder={texto} secureTextEntry={senha} keyboardType={tipoTeclado} />
 }
 const { height, width } = Dimensions.get('window')
+
 export default function Home(props) {
     const {navigation} = props;
     return (
         <ScrollView>
+            
            <View style={styles.container}>
+           
             <StatusBar hidden />
             <ImageBackground source={Index1} style={styles.bloco1}>
+            <Menu navigation={navigation} />
                 <View style={styles.containerMain} >
                     <Text style={styles.containerTextMain} >Assim como os primeiros passos, as primeiras colheradas são decisivas para o futuro da criança.</Text>
                 </View>
@@ -36,26 +42,6 @@ export default function Home(props) {
                 </View>
             </ImageBackground>
 
-
-
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.loginTexto}>Login</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Obesidade')}>
-                <Text style={styles.loginTexto}>Obesidade</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Cadastro')}>
-                <Text style={styles.loginTexto}>Cadastre-se</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Receitas')}>
-                <Text style={styles.loginTexto}>Receitas</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Perfil')}>
-                <Text style={styles.loginTexto}>Perfil</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.login} onPress={() => navigation.navigate('Sobre')}>
-                <Text style={styles.loginTexto}>Sobre</Text>
-            </TouchableOpacity>
         </View> 
         </ScrollView>
         

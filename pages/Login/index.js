@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Menu from './../../components/menu.js';
 
 const Input = ({texto, senha, tipoTeclado='default'}) =>{
     return <TextInput style={styles.input} placeholder={texto} secureTextEntry={senha} keyboardType={tipoTeclado} />
 }
-export default function Login() {
+export default function Login(props) {
+    const { navigation } = props
     return (
         <View style={styles.container}>
+            <Menu navigation={navigation} />
             <StatusBar hidden />
             <View style={styles.containerMain}>
                 <Text style={styles.titulo}>Entrar</Text>
